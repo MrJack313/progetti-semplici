@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Apple site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="apple.css">
+
+</head>
+
+<body>
+
+
+<header class="header">
+  <div class="header__content">
+    <a class="header__logo" href="">
+    <svg enable-background="new 0 0 14 44" height="44" viewBox="0 0 14 44" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m0 0h14v44h-14z" fill="none"/><path d="m13.0729 17.5214c-.093.0723-1.7248.9915-1.7248 3.0364 0 2.3651 2.0759 3.2017 2.1379 3.2223-.0103.0516-.3305 1.1464-1.0948 2.2618-.6816.9812-1.3943 1.9623-2.4787 1.9623s-1.3633-.63-2.613-.63c-1.2187 0-1.6525.6507-2.644.6507s-1.6835-.9089-2.4787-2.0243c-.9192-1.3117-1.6628-3.3463-1.6628-5.2776 0-3.0984 2.014-4.7406 3.9969-4.7406 1.0535 0 1.9313.692 2.5923.692.63 0 1.6112-.7333 2.8092-.7333.4545.0001 2.0864.0415 3.1605 1.5803zm-3.7284-2.8918c.4957-.5887.8469-1.4046.8469-2.2205 0-.1136-.0103-.2272-.031-.3202-.8056.031-1.7661.5371-2.3445 1.2084-.4544.5164-.8779 1.3323-.8779 2.1586 0 .1239.0207.2479.031.2892.0516.0103.1343.0207.2169.0207.723-.0001 1.6318-.4855 2.1586-1.1362z" fill="#fff"/></svg>
+    </a>
+    <ul class="header__menu">
+      <li><a href="#">Store</a></li>
+      <li><a href="#">Mac</a></li>
+      <li><a href="#">iPad</a></li>
+      <li><a href="#">iPhone</a></li>
+      <li><a href="#">Watch</a></li>
+    </ul>
+     
+      <div class="icon-hamburger">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</header>
+<script>
+  let item = document.querySelector('.icon-hamburger');
+  item.addEventListener("click", function() {
+        document.body.classList.toggle('menu-open');
+  });
+</script>
+
+
+
+    <video class="video-bg" src="img/video.mp4" autoplay muted loop></video>
+    <div class="section watch">
+        <h1 class="title">Ciao sono la prima sezione</h1>
+    </div>
+    <div class="section watch">
+        <h2 class="title">Ciao sono la seconda sezione</h2>
+    </div>
+    <div class="section watch">
+        <h2 class="title">Ciao sono la terza sezione</h2>
+    </div>
+
+<div class="panel">
+    <div class="container">
+        <p class=" watch fade-in intro">Design</p>
+        <h2 class=" watch fade-in title-big">Ingegneria estrema.</h2>
+        <img class="img-big-left" src="img/watch-1.jpeg" alt=""> 
+    </div>
+    
+</div>
+
+<div class="panel panel-white">
+    <div class="container">
+      
+        <h2 class=" watch fade-in title-med">Sembra il miglior smartwatch, perche' lo e'.</h2>
+        <p class="watch fade-in subtitle">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, et dolore fugit recusandae magnam dolor facilis, possimus dignissimos similique impedit vero labore nostrum sint inventore repellendus corrupti dolorum accusantium saepe!</p>
+        <p class="watch fade-in orange-text">Resistenza all'acqua fino a 100m </p>
+        <img class="img-big-center" src="img/watch-2.jpeg" alt=""> 
+          
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <div class="grid">
+    <div class="col-100">
+      <h3 class="pb-3">Apple</h3>
+      
+    </div>
+     <div class="col-33">
+      <h3>Contatti</h3>
+      <ul>
+        <li>Mail: xyz@email.com</li>
+        <li>Telefono: 333 33 333</li>
+      </ul>
+     </div>
+
+<div class="col-33">
+  <h3>Aiuto</h3>
+  <ul>
+    <li>Faq</li>
+    <li>Trova l'Apple Store piu' vicino a te</li>
+    <li>Rimborso
+    <li>Customer Service</li>
+    </li>
+  </ul>
+</div>
+
+<div class="col-33">
+  <h3>Chi Siamo</h3>
+  <ul>
+    <li>La nostra storia</li>
+    <li>Le nostre tecnologie</li>
+    <li>La nostra filosofia di prodotto</li>
+  </ul>
+</div>
+
+</footer>
+
+    <script> // elements
+    var elements_to_watch = document.querySelectorAll('.watch');
+    // callback 
+    var callback = function(items){
+      items.forEach((item) => {
+        if(item.isIntersecting){
+          item.target.classList.add("in-page");
+        } else{
+          item.target.classList.remove("in-page");
+        }
+      });
+    }
+    // observer
+    var observer = new IntersectionObserver(callback, { threshold: 0.5 } );
+    // apply
+    elements_to_watch.forEach((element) => {
+      observer.observe(element); 
+    }); </script>
+
+</body>
+
+</html>
